@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - MediPharm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html" aria-label="MediPharm Home">
+                        <i class="fas fa-mortar-pestle logo-icon"></i>
+                        <span>MediPharm</span>
+                    </a>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="search" id="product-search" placeholder="Search products..." aria-label="Search products">
+                    <button type="submit" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="products.html" class="active">Categories</a></li>
+                        <li><a href="#">Special Offers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Account</a></li>
+                    </ul>
+                    
+                    <!-- Cart -->
+                    <div class="cart-icon">
+                        <a href="cart.html" aria-label="Shopping Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="products-page">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>All Products</h1>
+                <div class="page-actions">
+                    <button id="filter-toggle" class="btn btn-outline btn-sm mobile-only">
+                        <i class="fas fa-filter"></i> Filters
+                    </button>
+                    <div class="sort-dropdown">
+                        <label for="sort-products" class="sr-only">Sort by</label>
+                        <select id="sort-products">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest Arrivals</option>
+                            <option value="bestselling">Best Selling</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Container -->
+            <div class="products-container">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar" id="filters-sidebar">
+                    <!-- Categories Filter -->
+                    <section class="filter-section">
+                        <h2>Categories</h2>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="medications">
+                                <span>Medications</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="vitamins">
+                                <span>Vitamins & Supplements</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="personal-care">
+                                <span>Personal Care</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="medical-devices">
+                                <span>Medical Devices</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="first-aid">
+                                <span>First Aid</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="category" value="baby-care">
+                                <span>Baby Care</span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Price Range Filter -->
+                    <section class="filter-section">
+                        <h2>Price Range</h2>
+                        <div class="price-filter">
+                            <div class="price-range">
+                                <input type="range" id="price-range" min="0" max="500" step="10" value="500">
+                                <div class="price-labels">
+                                    <span>$0</span>
+                                    <span id="price-max">$500+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Brands Filter -->
+                    <section class="filter-section">
+                        <h2>Brands</h2>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="medicare">
+                                <span>MediCare</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="healthplus">
+                                <span>HealthPlus</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="vitawell">
+                                <span>VitaWell</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="naturecare">
+                                <span>NatureCare</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="brand" value="pharmatech">
+                                <span>PharmaTech</span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Ratings Filter -->
+                    <section class="filter-section">
+                        <h2>Ratings</h2>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="rating" value="5">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span>& Up</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="rating" value="4">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>& Up</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="rating" value="3">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>& Up</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="rating" value="2">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>& Up</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="rating" value="1">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <span>& Up</span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Availability Filter -->
+                    <section class="filter-section">
+                        <h2>Availability</h2>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="in-stock">
+                                <span>In Stock</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="availability" value="out-of-stock">
+                                <span>Out of Stock</span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Filter Actions -->
+                    <div class="filter-actions">
+                        <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
+                        <button id="reset-filters" class="btn btn-outline">Reset</button>
+                    </div>
+                </aside>
+
+                <!-- Product Listing -->
+                <div class="product-listing">
+                    <!-- Product Grid -->
+                    <div class="product-grid" id="products-grid">
+                        <!-- Products will be loaded here dynamically -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="pagination" aria-label="Product pagination">
+                        <button class="pagination-btn" disabled aria-label="Previous page">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="pagination-btn active" aria-label="Page 1">1</button>
+                        <button class="pagination-btn" aria-label="Page 2">2</button>
+                        <button class="pagination-btn" aria-label="Page 3">3</button>
+                        <button class="pagination-btn" aria-label="Next page">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> MediPharm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
